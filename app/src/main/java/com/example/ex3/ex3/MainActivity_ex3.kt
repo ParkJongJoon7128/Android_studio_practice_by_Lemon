@@ -15,22 +15,26 @@ class MainActivity_ex3 : AppCompatActivity() {
         setContentView(R.layout.activity_main_ex3)
 
         pay_self.setOnClickListener {
+            var inner_fee = 1200
             var input_money = input_pay.text.toString().toInt()
-            var result = text4.text.toString().toInt() + input_money
+            var result = text4.text.toString().toInt() + input_money - inner_fee
             text4.setText(result.toString())
 
-            fee += 1200
+
             text6.setText(fee.toString())
+            fee+=1200
         }
 
         pay_someone.setOnClickListener {
+            var inner_fee = 1200
             var input_money = input_pay.text.toString().toInt()
             var current_money = text4.text.toString().toInt()
             if (input_money > current_money) {
                 Toast.makeText(applicationContext, "출금 불가", Toast.LENGTH_SHORT).show()
             } else {
-                var result = current_money - input_money
+                var result = current_money - input_money - inner_fee
                 text4.setText(result.toString())
+
                 fee += 1200
                 text6.setText(fee.toString())
             }
