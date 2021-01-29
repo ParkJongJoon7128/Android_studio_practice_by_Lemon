@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".ex3.MainActivity_ex3">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사용자 : 김철수"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계좌 : 111 - 1234 - 5678"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="금액 : "
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/text4"
+        app:layout_constraintTop_toBottomOf="@id/text2" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500000"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toRightOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/text2" />
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="은행이 얻은 수수료 : "
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text4" />
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toRightOf="@id/text5"
+        app:layout_constraintTop_toBottomOf="@id/text4" />
+
+    <EditText
+        android:id="@+id/input_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:focusable="auto"
+        android:hint="입금 금액 입력"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text5" />
+
+    <Button
+        android:id="@+id/pay_self"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="나에게 입금하기"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_pay" />
+
+    <Button
+        android:id="@+id/pay_someone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:text="출금하기"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toRightOf="@id/pay_self"
+        app:layout_constraintTop_toBottomOf="@id/input_pay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
