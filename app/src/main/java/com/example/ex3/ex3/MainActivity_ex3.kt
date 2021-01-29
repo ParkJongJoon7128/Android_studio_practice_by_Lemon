@@ -16,11 +16,17 @@ class MainActivity_ex3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_ex3)
 
-        pay_self.setOnClickListener(clickListener1)
-        pay_someone.setOnClickListener(clickListener2)
+
+        pay_self.setOnClickListener {
+            self_button()
+        }
+        pay_someone.setOnClickListener {
+            someone_button()
+        }
     }
 
-    private val clickListener1: View.OnClickListener = View.OnClickListener { view ->
+
+    private fun self_button() {
         var inner_fee = 1200
         var input_money = input_pay.text.toString().toInt()
         var result = text4.text.toString().toInt() + input_money - inner_fee
@@ -28,10 +34,9 @@ class MainActivity_ex3 : AppCompatActivity() {
 
         fee += 1200
         text6.setText(fee.toString())
-
     }
 
-    private val clickListener2: View.OnClickListener = View.OnClickListener { view ->
+    private fun someone_button() {
         var inner_fee = 1200
         var input_money = input_pay.text.toString().toInt()
         var current_money = text4.text.toString().toInt()
@@ -46,3 +51,5 @@ class MainActivity_ex3 : AppCompatActivity() {
         }
     }
 }
+
+
