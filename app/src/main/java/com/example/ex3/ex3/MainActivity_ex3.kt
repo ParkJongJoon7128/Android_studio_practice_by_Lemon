@@ -19,12 +19,20 @@ class MainActivity_ex3 : AppCompatActivity() {
         setContentView(R.layout.activity_main_ex3)
 
         pay_self.setOnClickListener {
-            var editMoney: Int = input_pay.text.toString().toInt()
-            plusMoney(editMoney)
+            if (input_pay.text.count() > 1) {
+                var editMoney: Int = input_pay.text.toString().toInt()
+                plusMoney(editMoney)
+            } else {
+                plusMoney()
+            }
         }
         pay_someone.setOnClickListener {
-            var editMoney: Int = input_pay.text.toString().toInt()
-            minusMoney(editMoney)
+            if (input_pay.text.count() > 1) {
+                var editMoney: Int = input_pay.text.toString().toInt()
+                minusMoney(editMoney)
+            } else {
+                minusMoney()
+            }
         }
     }
 
