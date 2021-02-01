@@ -49,7 +49,7 @@ class MainActivity_ex4 : AppCompatActivity() {
                     totalMoney -= m1
                     Toast.makeText(
                             applicationContext,
-                            "총 ${totalMoney - m1}원을 출금하였습니다",
+                            "잔액 : ${totalMoney}원",
                             Toast.LENGTH_SHORT
                     ).show()
                     result_tv.text = "전재산 : ${totalMoney.toString()}원"
@@ -60,14 +60,14 @@ class MainActivity_ex4 : AppCompatActivity() {
                 if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
-                            "잔액이 없습니다",
+                            "잔액이 부족합니다",
                             Toast.LENGTH_SHORT
                     ).show()
                 } else {
                     totalMoney -= m2
                     Toast.makeText(
                             applicationContext,
-                            "총 ${totalMoney - m2}원을 출금하였습니다",
+                            "잔액 : ${totalMoney}원",
                             Toast.LENGTH_SHORT
                     ).show()
                     result_tv.text = "전재산 : ${totalMoney.toString()}원"
@@ -77,14 +77,14 @@ class MainActivity_ex4 : AppCompatActivity() {
                 if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
-                            "잔액이 없습니다",
+                            "잔액이 부족합니다",
                             Toast.LENGTH_SHORT
                     ).show()
                 } else {
                     totalMoney -= m3
                     Toast.makeText(
                             applicationContext,
-                            "총 ${totalMoney - m3}원을 출금하였습니다",
+                            "잔액 : ${totalMoney}원",
                             Toast.LENGTH_SHORT
                     ).show()
                     result_tv.text = "전재산 : ${totalMoney.toString()}원"
@@ -94,14 +94,14 @@ class MainActivity_ex4 : AppCompatActivity() {
                 if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
-                            "잔액이 없습니다",
+                            "잔액이 부족합니다",
                             Toast.LENGTH_SHORT
                     ).show()
                 } else {
                     totalMoney -= m4
                     Toast.makeText(
                             applicationContext,
-                            "총 ${totalMoney - m4}원을 출금하였습니다",
+                            "잔액 : ${totalMoney}원",
                             Toast.LENGTH_SHORT
                     ).show()
                     result_tv.text = "전재산 : ${totalMoney.toString()}원"
