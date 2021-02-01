@@ -12,28 +12,36 @@ class MainActivity_ex3 : AppCompatActivity() {
 
     var totalMoney = 500000 // 계좌 총액
     var bankFees = 1200 // 은행 수수료
+    var bankCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_ex3)
 
-        var editMoney : Int = input_pay.text.toString().toInt()
-
         pay_self.setOnClickListener {
+            var editMoney: Int = input_pay.text.toString().toInt()
             plusMoney(editMoney)
         }
         pay_someone.setOnClickListener {
+            var editMoney: Int = input_pay.text.toString().toInt()
             minusMoney(editMoney)
         }
     }
 
 
-    private fun plusMoney(editMoney: Int) {
-        totalMoney += (editMoney - bankFees)
-        text4.text = totalMoney.toString()
+    private fun plusMoney(editMoney: Int = 0) {
+        if (editMoney > bankFees) {
+            totalMoney += (editMoney - bankFees)
+            text4.text = totalMoney.toString()
+            bankCount++
+            text5.text = "은행이 얻은 수수료 : ${bankFees * bankCount}원"
+        } else {
+            // 수수료가 부족합니다
+            Toast.makeText(applicationContext, "수수료 부족", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun minusMoney(editMoney: Int) {
+    private fun minusMoney(editMoney: Int = 0) {
         val estimatedAmount: Int = (editMoney + bankFees)
 
         when {
@@ -47,10 +55,13 @@ class MainActivity_ex3 : AppCompatActivity() {
             estimatedAmount < totalMoney -> {
                 totalMoney -= estimatedAmount
                 Toast.makeText(
-                    applicationContext,
-                    "총 ${estimatedAmount}원을 출금하였습니다",
-                    Toast.LENGTH_SHORT
+                        applicationContext,
+                        "총 ${estimatedAmount}원을 출금하였습니다",
+                        Toast.LENGTH_SHORT
                 ).show()
+                text4.text = totalMoney.toString()
+                bankCount++
+                text5.text = "은행이 얻은 수수료 : ${bankFees * bankCount}원"
             }
         }
     }
