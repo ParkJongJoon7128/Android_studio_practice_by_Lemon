@@ -10,52 +10,51 @@ import kotlinx.android.synthetic.main.activity_main_ex3.*
 
 class MainActivity_ex3 : AppCompatActivity() {
 
-    private var fee = 0
+    var totalMoney = 500000 // 계좌 총액
+    var bankFees = 1200 // 은행 수수료
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_ex3)
 
+        var editMoney : Int = input_pay.text.toString().toInt()
 
         pay_self.setOnClickListener {
-            self_button()
+            plusMoney(editMoney)
         }
         pay_someone.setOnClickListener {
-            someone_button()
+            minusMoney(editMoney)
         }
     }
 
 
-    private fun self_button() {
-        var inner_fee = 1200
-        var input_money = input_pay.text.toString().toInt()
-        var result = text4.text.toString().toInt() + input_money - inner_fee
-        text4.setText(result.toString())
-
-        fee += 1200
-        text6.setText(fee.toString())
+    private fun plusMoney(editMoney: Int) {
+        totalMoney += (editMoney - bankFees)
+        text4.text = totalMoney.toString()
     }
 
-    private fun someone_button() {
-        var inner_fee = 1200
-        var input_money = input_pay.text.toString().toInt()
-        var current_money = text4.text.toString().toInt()
-        if (input_money > current_money) {
-            Toast.makeText(applicationContext, "출금 불가", Toast.LENGTH_SHORT).show()
+    private fun minusMoney(editMoney: Int) {
+        val estimatedAmount: Int = (editMoney + bankFees)
 
-        } else if (inner_fee < 0) {
-            Toast.makeText(applicationContext, "출금 불가", Toast.LENGTH_SHORT).show()
-        } else {
-            var inner_fee = 1200
-            var input_money = input_pay.text.toString().toInt()
-            var result = current_money - input_money + inner_fee
-            text4.setText(result.toString())
+        when {
+            totalMoney <= bankFees -> {
+                Toast.makeText(applicationContext, "수수료 부족으로 출금 불가합니다", Toast.LENGTH_SHORT).show()
+            }
+            estimatedAmount >= totalMoney -> {
 
-            fee += 1200
-            text6.setText(fee.toString())
-            inner_fee -= 1200
+                Toast.makeText(applicationContext, "한도 초과입니다", Toast.LENGTH_SHORT).show()
+            }
+            estimatedAmount < totalMoney -> {
+                totalMoney -= estimatedAmount
+                Toast.makeText(
+                    applicationContext,
+                    "총 ${estimatedAmount}원을 출금하였습니다",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }
+
 
 
