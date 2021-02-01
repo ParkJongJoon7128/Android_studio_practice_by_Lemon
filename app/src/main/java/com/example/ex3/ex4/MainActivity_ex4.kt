@@ -39,10 +39,10 @@ class MainActivity_ex4 : AppCompatActivity() {
     private fun buy_Coffee(edit_num: Int = 0) {
         when {
             (edit_num == 1) -> {
-                if (totalMoney <= 0) {
+                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
-                            "잔액이 없습니다",
+                            "잔액이 부족합니다",
                             Toast.LENGTH_SHORT
                     ).show()
                 } else {
@@ -57,7 +57,7 @@ class MainActivity_ex4 : AppCompatActivity() {
 
             }
             (edit_num == 2) -> {
-                if (totalMoney <= 0) {
+                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
@@ -74,7 +74,7 @@ class MainActivity_ex4 : AppCompatActivity() {
                 }
             }
             (edit_num == 3) -> {
-                if (totalMoney <= 0) {
+                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
@@ -91,7 +91,7 @@ class MainActivity_ex4 : AppCompatActivity() {
                 }
             }
             (edit_num == 4) -> {
-                if (totalMoney <= 0) {
+                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
