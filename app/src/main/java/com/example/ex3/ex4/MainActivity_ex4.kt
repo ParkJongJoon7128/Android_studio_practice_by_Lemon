@@ -20,11 +20,16 @@ class MainActivity_ex4 : AppCompatActivity() {
 
         btn_buy.setOnClickListener {
             // null 체크
-            if (edit_num.text.count() > 1) {
+            if (edit_num.text.count() > 0) {
                 var edit_num: Int = edit_num.text.toString().toInt()
                 buy_Coffee(edit_num)
             } else {
                 //null일 경우 기본값 0 반환
+                Toast.makeText(
+                        applicationContext,
+                        "번호를 입력해주세요",
+                        Toast.LENGTH_SHORT
+                ).show()
                 buy_Coffee()
             }
         }
@@ -35,38 +40,45 @@ class MainActivity_ex4 : AppCompatActivity() {
             (edit_num == 1) -> {
                 totalMoney -= m1
                 Toast.makeText(
-                    applicationContext,
-                    "총 ${totalMoney - m1}원을 출금하였습니다",
-                    Toast.LENGTH_SHORT
+                        applicationContext,
+                        "총 ${totalMoney - m1}원을 출금하였습니다",
+                        Toast.LENGTH_SHORT
                 ).show()
-                result_tv.text = totalMoney.toString()
+                result_tv.text = "전재산 : ${totalMoney.toString()}원"
             }
             (edit_num == 2) -> {
                 totalMoney -= m2
                 Toast.makeText(
-                    applicationContext,
-                    "총 ${totalMoney - m2}원을 출금하였습니다",
-                    Toast.LENGTH_SHORT
+                        applicationContext,
+                        "총 ${totalMoney - m2}원을 출금하였습니다",
+                        Toast.LENGTH_SHORT
                 ).show()
-                result_tv.text = totalMoney.toString()
+                result_tv.text = "전재산 : ${totalMoney.toString()}원"
             }
             (edit_num == 3) -> {
                 totalMoney -= m3
                 Toast.makeText(
-                    applicationContext,
-                    "총 ${totalMoney - m3}원을 출금하였습니다",
-                    Toast.LENGTH_SHORT
+                        applicationContext,
+                        "총 ${totalMoney - m3}원을 출금하였습니다",
+                        Toast.LENGTH_SHORT
                 ).show()
-                result_tv.text = totalMoney.toString()
+                result_tv.text = "전재산 : ${totalMoney.toString()}원"
             }
             (edit_num == 4) -> {
                 totalMoney -= m4
                 Toast.makeText(
-                    applicationContext,
-                    "총 ${totalMoney - m4}원을 출금하였습니다",
-                    Toast.LENGTH_SHORT
+                        applicationContext,
+                        "총 ${totalMoney - m4}원을 출금하였습니다",
+                        Toast.LENGTH_SHORT
                 ).show()
-                result_tv.text = totalMoney.toString()
+                result_tv.text = "전재산 : ${totalMoney.toString()}원"
+            }
+            else -> {
+                Toast.makeText(
+                        applicationContext,
+                        "맞는 번호를 입력하세요",
+                        Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
