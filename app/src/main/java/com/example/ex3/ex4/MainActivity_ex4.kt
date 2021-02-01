@@ -21,7 +21,7 @@ class MainActivity_ex4 : AppCompatActivity() {
 
         btn_buy.setOnClickListener {
             // null 체크
-            if (edit_num.text.count() > 0) {
+            if (edit_num.text.count() == 1) {
                 var edit_num: Int = edit_num.text.toString().toInt()
                 buy_Coffee(edit_num)
             } else {
@@ -45,14 +45,16 @@ class MainActivity_ex4 : AppCompatActivity() {
                             "잔액이 없습니다",
                             Toast.LENGTH_SHORT
                     ).show()
+                } else {
+                    totalMoney -= m1
+                    Toast.makeText(
+                            applicationContext,
+                            "총 ${totalMoney - m1}원을 출금하였습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
                 }
-                totalMoney -= m1
-                Toast.makeText(
-                        applicationContext,
-                        "총 ${totalMoney - m1}원을 출금하였습니다",
-                        Toast.LENGTH_SHORT
-                ).show()
-                result_tv.text = "전재산 : ${totalMoney.toString()}원"
+
             }
             (edit_num == 2) -> {
                 if (totalMoney <= 0) {
