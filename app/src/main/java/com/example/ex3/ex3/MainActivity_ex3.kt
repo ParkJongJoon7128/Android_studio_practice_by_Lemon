@@ -77,7 +77,7 @@ class MainActivity_ex3 : AppCompatActivity() {
                 Toast.makeText(applicationContext, "한도 초과입니다", Toast.LENGTH_SHORT).show()
             }
 
-            // (입력금액 + 수수료)가 총금액보다 적을 때
+            //
             estimatedAmount < totalMoney -> {
                 totalMoney -= estimatedAmount
                 Toast.makeText(
@@ -87,7 +87,7 @@ class MainActivity_ex3 : AppCompatActivity() {
                 ).show()
                 text4.text = totalMoney.toString()
                 bankCount++
-                text5.text = "은행이 얻은 수수료 : ${bankFees * bankCount}원"
+
             }
         }
     }

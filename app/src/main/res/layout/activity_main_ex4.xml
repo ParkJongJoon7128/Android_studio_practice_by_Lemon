@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    tools:context=".ex4.MainActivity_ex4">
+
+    <Button
+        android:id="@+id/btn_buy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9800"
+        android:text="구매"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전재산 : 50000원"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_buy"
+        app:layout_constraintLeft_toLeftOf="@id/btn_buy"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="주문하실 제품의 번호를 입력하세요"
+        app:layout_constraintBottom_toTopOf="@id/result_tv"
+        app:layout_constraintLeft_toLeftOf="@id/result_tv" />
+
+    <TextView
+        android:id="@+id/menu1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. 아메리카노 : 3200원"
+        app:layout_constraintBottom_toTopOf="@id/menu2"
+        app:layout_constraintTop_toBottomOf="@id/menu_title" />
+
+    <TextView
+        android:id="@+id/menu2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. 라떼 : 4000원"
+        app:layout_constraintBottom_toTopOf="@id/menu3"
+        app:layout_constraintTop_toBottomOf="@id/menu1" />
+
+    <TextView
+        android:id="@+id/menu3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. 핫초코 : 4500원"
+        app:layout_constraintBottom_toTopOf="@id/menu4"
+        app:layout_constraintTop_toBottomOf="@id/menu2" />
+
+    <TextView
+        android:id="@+id/menu4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. 조각 케이크 : 5000원"
+        app:layout_constraintBottom_toTopOf="@id/edit_num"
+        app:layout_constraintTop_toBottomOf="@id/menu3" />
+
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M E N U"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@id/menu1"
+        app:layout_constraintLeft_toLeftOf="@id/edit_num"
+        app:layout_constraintRight_toRightOf="@id/edit_num"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
