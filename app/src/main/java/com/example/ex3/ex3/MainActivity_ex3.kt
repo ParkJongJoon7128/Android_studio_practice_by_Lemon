@@ -49,22 +49,27 @@ class MainActivity_ex3 : AppCompatActivity() {
         }
     }
 
+
     private fun minusMoney(editMoney: Int = 0) {
         val estimatedAmount: Int = (editMoney + bankFees)
 
         when {
-            totalMoney <= bankFees -> {
-                Toast.makeText(applicationContext, "수수료 부족으로 출금 불가합니다", Toast.LENGTH_SHORT).show()
+            editMoney <= bankFees -> {
+                Toast.makeText(applicationContext, "출금액 부족입니다", Toast.LENGTH_SHORT).show()
             }
-            estimatedAmount >= totalMoney -> {
 
+            totalMoney <= bankFees -> {
+                Toast.makeText(applicationContext, "수수료 부족입니다", Toast.LENGTH_SHORT).show()
+            }
+
+            estimatedAmount >= totalMoney -> {
                 Toast.makeText(applicationContext, "한도 초과입니다", Toast.LENGTH_SHORT).show()
             }
             estimatedAmount < totalMoney -> {
                 totalMoney -= estimatedAmount
                 Toast.makeText(
                         applicationContext,
-                        "총 ${estimatedAmount}원을 출금하였습니다",
+                        "총 ${editMoney - bankFees}원을 출금하였습니다",
                         Toast.LENGTH_SHORT
                 ).show()
                 text4.text = totalMoney.toString()
