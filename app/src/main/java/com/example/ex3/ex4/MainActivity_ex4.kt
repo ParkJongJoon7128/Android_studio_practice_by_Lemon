@@ -8,7 +8,8 @@ import kotlinx.android.synthetic.main.activity_main_ex3.*
 import kotlinx.android.synthetic.main.activity_main_ex4.*
 
 class MainActivity_ex4 : AppCompatActivity() {
-    var totalMoney = 500000 // 계좌 총액
+
+    var totalMoney = 50000 // 계좌 총액
     var m1 = 3200 // 아메리카노 금액
     var m2 = 4000 // 라떼 금액
     var m3 = 4500 // 핫초코 금액
@@ -38,7 +39,7 @@ class MainActivity_ex4 : AppCompatActivity() {
     private fun buy_Coffee(edit_num: Int = 0) {
         when {
             (edit_num == 1) -> {
-                if (totalMoney == 0) {
+                if (totalMoney <= 0) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
@@ -54,7 +55,7 @@ class MainActivity_ex4 : AppCompatActivity() {
                 result_tv.text = "전재산 : ${totalMoney.toString()}원"
             }
             (edit_num == 2) -> {
-                if (totalMoney == 0) {
+                if (totalMoney <= 0) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
@@ -71,7 +72,7 @@ class MainActivity_ex4 : AppCompatActivity() {
                 }
             }
             (edit_num == 3) -> {
-                if (totalMoney == 0) {
+                if (totalMoney <= 0) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
@@ -88,7 +89,7 @@ class MainActivity_ex4 : AppCompatActivity() {
                 }
             }
             (edit_num == 4) -> {
-                if (totalMoney == 0) {
+                if (totalMoney <= 0) {
                     Toast.makeText(
                             applicationContext,
                             "잔액이 없습니다",
