@@ -38,6 +38,13 @@ class MainActivity_ex4 : AppCompatActivity() {
     private fun buy_Coffee(edit_num: Int = 0) {
         when {
             (edit_num == 1) -> {
+                if (totalMoney == 0) {
+                    Toast.makeText(
+                            applicationContext,
+                            "잔액이 없습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                }
                 totalMoney -= m1
                 Toast.makeText(
                         applicationContext,
@@ -47,31 +54,55 @@ class MainActivity_ex4 : AppCompatActivity() {
                 result_tv.text = "전재산 : ${totalMoney.toString()}원"
             }
             (edit_num == 2) -> {
-                totalMoney -= m2
-                Toast.makeText(
-                        applicationContext,
-                        "총 ${totalMoney - m2}원을 출금하였습니다",
-                        Toast.LENGTH_SHORT
-                ).show()
-                result_tv.text = "전재산 : ${totalMoney.toString()}원"
+                if (totalMoney == 0) {
+                    Toast.makeText(
+                            applicationContext,
+                            "잔액이 없습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    totalMoney -= m2
+                    Toast.makeText(
+                            applicationContext,
+                            "총 ${totalMoney - m2}원을 출금하였습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
+                }
             }
             (edit_num == 3) -> {
-                totalMoney -= m3
-                Toast.makeText(
-                        applicationContext,
-                        "총 ${totalMoney - m3}원을 출금하였습니다",
-                        Toast.LENGTH_SHORT
-                ).show()
-                result_tv.text = "전재산 : ${totalMoney.toString()}원"
+                if (totalMoney == 0) {
+                    Toast.makeText(
+                            applicationContext,
+                            "잔액이 없습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    totalMoney -= m3
+                    Toast.makeText(
+                            applicationContext,
+                            "총 ${totalMoney - m3}원을 출금하였습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
+                }
             }
             (edit_num == 4) -> {
-                totalMoney -= m4
-                Toast.makeText(
-                        applicationContext,
-                        "총 ${totalMoney - m4}원을 출금하였습니다",
-                        Toast.LENGTH_SHORT
-                ).show()
-                result_tv.text = "전재산 : ${totalMoney.toString()}원"
+                if (totalMoney == 0) {
+                    Toast.makeText(
+                            applicationContext,
+                            "잔액이 없습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    totalMoney -= m4
+                    Toast.makeText(
+                            applicationContext,
+                            "총 ${totalMoney - m4}원을 출금하였습니다",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
+                }
             }
             else -> {
                 Toast.makeText(
