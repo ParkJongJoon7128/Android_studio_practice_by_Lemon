@@ -1,5 +1,6 @@
 package com.example.ex3.ex4
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,99 +22,60 @@ class MainActivity_ex4 : AppCompatActivity() {
 
         btn_buy.setOnClickListener {
             // null 체크
-            if (edit_num.text.count() == 1) {
-                var edit_num: Int = edit_num.text.toString().toInt()
+            if (edit_num.text.count() >= 1) {
+                val edit_num: String = edit_num.text.toString()
                 buy_Coffee(edit_num)
             } else {
                 //null일 경우 기본값 0 반환
-                Toast.makeText(
-                        applicationContext,
-                        "번호를 입력해주세요",
-                        Toast.LENGTH_SHORT
-                ).show()
-                buy_Coffee()
+                Toast.makeText(applicationContext, "번호를 입력해주세요", Toast.LENGTH_SHORT).show()
+
+                //buy_Coffee() 호출할 이유가 없습니다..
             }
         }
     }
 
-    private fun buy_Coffee(edit_num: Int = 0) {
-        when {
-            (edit_num == 1) -> {
-                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액이 부족합니다",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    totalMoney -= m1
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액 : ${totalMoney}원",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
-                }
+    private fun buy_Coffee(edit_num: String) {
+        // 메소드명은 저렇게 표기하지 않도록 합니다. buyCoffee로 해주세요
+        when (edit_num) {
 
+            "1" -> {
+                getResult(m1, "아메리카노")
             }
-            (edit_num == 2) -> {
-                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액이 부족합니다",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    totalMoney -= m2
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액 : ${totalMoney}원",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
-                }
+
+            "2" -> {
+                getResult(m2, "라떼")
             }
-            (edit_num == 3) -> {
-                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액이 부족합니다",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    totalMoney -= m3
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액 : ${totalMoney}원",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
-                }
+
+            "3" -> {
+                getResult(m3, "핫초코")
             }
-            (edit_num == 4) -> {
-                if (totalMoney <= m1 && totalMoney <= m2 && totalMoney <= m3 && totalMoney <= m4) {
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액이 부족합니다",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    totalMoney -= m4
-                    Toast.makeText(
-                            applicationContext,
-                            "잔액 : ${totalMoney}원",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                    result_tv.text = "전재산 : ${totalMoney.toString()}원"
-                }
+
+            "4" -> {
+                getResult(m4, "조각케익")
             }
+
             else -> {
-                Toast.makeText(
-                        applicationContext,
-                        "맞는 번호를 입력하세요",
-                        Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "메뉴판에 없는 메뉴입니다", Toast.LENGTH_SHORT).show()
+
             }
+
         }
     }
+
+    @SuppressLint("SetTextI18n")
+    private fun getResult(menu : Int, menuName : String) {
+
+        if(totalMoney >= menu) {
+            totalMoney -= menu
+            result_tv.text = "전재산: ${totalMoney}원"
+            Toast.makeText(this, "$menuName 구매", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "잔액 부족", Toast.LENGTH_SHORT).show()
+
+        }
+
+
+    }
+
+
 }
