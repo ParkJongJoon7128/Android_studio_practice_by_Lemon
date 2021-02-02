@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ex3.R
-import kotlinx.android.synthetic.main.nonememo.*
+import kotlinx.android.synthetic.main.write_memo.*
 
 class SecondActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,14 +12,9 @@ class SecondActivity: AppCompatActivity() {
         setContentView(R.layout.write_memo)
 
 
-        btn_Add.setOnClickListener {
+        btn_Add1.setOnClickListener {
             var intent = Intent(this, MainActivity_ex5::class.java)
             startActivity(intent)
         }
-
-
-
-
-
     }
 }
