@@ -11,10 +11,17 @@ class SecondActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.write_memo)
 
+        var title = edit_title.text
+        var content = edit_content.text
+
+
+
+
+
 
         btn_Add1.setOnClickListener {
             var intent = Intent(this, MainActivity_ex5::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, 1)
         }
     }
 }
