@@ -17,7 +17,8 @@ class MainActivity_ex5 : AppCompatActivity() {
         }
 
         btn_seeMemo.setOnClickListener {
-
+            var intent = Intent(this, ThridActivity::class.java)
+            startActivity(intent)
         }
 
     }

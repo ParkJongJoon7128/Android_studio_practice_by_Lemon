@@ -9,6 +9,8 @@ class SecondActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.write_memo)
 
+        var intent = getIntent()
+
 
 
     }
