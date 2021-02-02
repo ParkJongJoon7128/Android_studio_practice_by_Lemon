@@ -7,7 +7,7 @@ import com.example.ex3.R
 class ThridActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.existMemo)
+        setContentView(R.layout.existmemo)
 
 
 
