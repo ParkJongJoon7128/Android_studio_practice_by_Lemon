@@ -15,13 +15,11 @@ class SecondActivity: AppCompatActivity() {
         var content = edit_content.text
 
 
-
-
-
-
         btn_Add1.setOnClickListener {
             var intent = Intent(this, MainActivity_ex5::class.java)
-            startActivityForResult(intent, 1)
+            intent.putExtra("title", title)
+            intent.putExtra("content", content)
+            startActivity(intent)
         }
     }
 }
