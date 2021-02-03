@@ -2,6 +2,7 @@ package com.example.ex3.ex5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ex3.R
 import kotlinx.android.synthetic.main.activity_main_ex5.*
@@ -23,5 +24,7 @@ class MainActivity_ex5 : AppCompatActivity() {
 
         recyclerView.adapter = CoffeeAdapter(this, coffeeList)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+
     }
 }

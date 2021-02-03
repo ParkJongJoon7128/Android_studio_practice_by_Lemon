@@ -43,16 +43,15 @@ class CoffeeAdapter(val context: Context, val CoffeeList: ArrayList<Coffee>) :
 
             if (coffee.coffee_img != "") {
                 val resourceId = context.resources.getIdentifier(coffee.coffee_img, "drawable", context.packageName)
-                coffee_photo?.setImageResource(resourceId)
+                coffee_photo.setImageResource(resourceId)
             } else {
-                coffee_photo?.setImageResource(R.mipmap.ic_launcher)
+                coffee_photo.setImageResource(R.mipmap.ic_launcher)
             }
-
-
-            coffee_photo.setImageResource(R.mipmap.ic_launcher_round)
             coffeename.text = coffee.coffee_name
             quantity.text = coffee.quantity
             price.text = coffee.price
+
+
         }
 
 
