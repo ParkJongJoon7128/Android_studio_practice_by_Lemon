@@ -81,27 +81,28 @@ class CoffeeAdapter(val context: Context, val CoffeeList: ArrayList<Coffee>) :
                         q1--
                         price.text = q1.toString()
                         resultMoney.text = "My Money - ${totalMoney.toString()}₩"
-                        if(q1 == 0){
 
-                        }
                     }
                     "Latte" -> {
                         totalMoney -= latte
                         q2--
                         price.text = q2.toString()
                         resultMoney.text = "My Money - ${totalMoney.toString()}₩"
+
                     }
                     "Cocoa" -> {
                         totalMoney -= cocoa
                         q3--
                         price.text = q3.toString()
                         resultMoney.text = "My Money - ${totalMoney.toString()}₩"
+
                     }
                     "Cake" -> {
                         totalMoney -= cake
                         q4--
                         price.text = q4.toString()
                         resultMoney.text = "My Money - ${totalMoney.toString()}₩"
+
                     }
                     else -> {
                         Unit
