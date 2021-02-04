@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ex3.R
 import kotlinx.android.synthetic.main.list_item.view.*
@@ -81,7 +82,6 @@ class CoffeeAdapter(val context: Context, val CoffeeList: ArrayList<Coffee>) :
                         price.text = q1.toString()
                         resultMoney.text = "My Money - ${totalMoney.toString()}₩"
                         if(q1 == 0){
-                            coffeename.text = "SOLD OUT"
 
                         }
                     }
