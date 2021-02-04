@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ex3.R
 import kotlinx.android.synthetic.main.list_item.view.*
@@ -29,7 +30,14 @@ class CoffeeAdapter(val context: Context, val CoffeeList: ArrayList<Coffee>) :
     }
 
     override fun onBindViewHolder(holder: CoffeeAdapter.CoffeeViewHolder, position: Int) {
+
+        holder.itemView.setOnClickListener{
+
+        }
+
         return holder.bindView(CoffeeList[position], context)
+
+
     }
 
     inner class CoffeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
